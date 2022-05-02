@@ -1,0 +1,21 @@
+{
+  "title": "Aleen Rotor",
+  "url": "https://aleenrotor/",
+  "language": "es",
+  "description": "Aleen Rotor is a personal project about procedural art",
+  "feed": {
+    "description": "Aleen Rotor is a personal project about procedural art",
+    "filename": "feed.xml",
+    "path": "/feed/feed.xml",
+    "id": "https://aleenrotor/"
+  },
+  "jsonfeed": {
+    "path": "/feed/feed.json",
+    "url": "https://aleenrotor/feed/feed.json"
+  },
+  "author": {
+    "name": "Aleen Rotor",
+    "email": "elenatorro@gmail.com",
+    "url": "https://aleenrotor/about/"
+  }
+}
