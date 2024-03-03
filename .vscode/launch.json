@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Eleventy Dev Server",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": ["run-script", "start"],
+            "restart": true,
+            "port": 8080,
+            "skipFiles": ["<node_internals>/**"],
+            "env": {
+                "NODE_ENV": "development"
+            }
+        }
+    ]
+}
