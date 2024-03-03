@@ -12,3 +12,4 @@ This is just meant to be the first entry, so the blog is not empty and lonely. I
 But I wasn't learning anything about generative art. Which was fine, by the way, you can enjoy things you don't understand. However, I wanted to start doing my own art... and I didn't know where to start.
 
 I learn better through practice. This project is just this: a single place to post what I learn.
+

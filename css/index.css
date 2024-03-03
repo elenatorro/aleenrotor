@@ -213,9 +213,8 @@ code {
   --shadow-size: .25em;
   display: flex;
   flex-wrap: wrap;
-  /* counter-increment: start-from -1; */
   line-height: 1.8;
-  margin: 1em 0;
+  margin: 1em 0 4em 0;
   padding: 1em;
   flex-direction: column;
   border: 1px solid #FF66B3;
@@ -420,11 +419,10 @@ a[href].direct-link:focus:visited,
 
 .post-content p {
   width: 100%;
-  max-width: 37em;
+  max-width: 42em;
   text-align: left;
   font-size: 1.125em;
   text-justify: initial;
-  text-align: justify;
 }
 
 .footer ul {
@@ -550,4 +548,15 @@ h1.main-title {
   position: relative;
   width: var(--switch-size);
   height: calc(var(--switch-size) / 2);
+}
+
+
+.gallery {
+  display: flex;
+  grid-gap: 2.5em;
+  flex-wrap: wrap;
+}
+
+.gallery img {
+  max-width: 600px;
 }
