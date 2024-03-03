@@ -3,18 +3,6 @@ layout: layouts/base.njk
 templateClass: tmpl-post
 ---
 
-{%- for tag in tags | filterTagList -%}
-{%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
-<a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
-{%- endfor %}
-{# 
-  {%- if date %}
-  <time datetime="{{ page.date | htmlDateString }}">{{ date | readableDate }}</time>
-  {%- endif %} 
-#}
-
-<p>Palabras: {{ content | wordCount }}</p>
-
 <div class="post-layout">
   {%- if curiosities %}
     <section class="post-content with-aside">
@@ -22,7 +10,7 @@ templateClass: tmpl-post
       {{ content | safe }}
     </section>
     <aside class="post-aside">
-      <h2>💡 Curiosidades</h2>
+      <h2>💡 More</h2>
       <ul>
       {%- for curiosity in curiosities %}
         <li>{{ curiosity }}</li>
@@ -31,7 +19,26 @@ templateClass: tmpl-post
     </aside>
   {%- else %}
     <section class="post-content">
-      <h1>{{ title }}</h1>
+      <div class="post-header">        
+        <section>
+        {%- if date %}
+          <time datetime="{{ page.date | htmlDateString }}">{{ date | readableDate }}</time>
+        {%- endif %}
+        </section>
+
+        <section>
+          {%- for tag in tags | filterTagList -%}
+          {%- set tagUrl %}/tags/{{ tag | slug }}/{% endset -%}
+          <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
+          {%- endfor %}
+        </section>
+
+        <section class="post-title">
+          <h1>{{ title }}</h1>
+          <sub>{{ description }}</sub>
+        </section>
+      </div>
+
       {{ content | safe }}
     </section>
   {%- endif %}
