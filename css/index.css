@@ -435,6 +435,10 @@ a[href].direct-link:focus:visited,
   padding: 3em;
 }
 
+.footer ul li {
+  margin: 0 1em;
+}
+
 .capitalize {
   text-transform: capitalize;
 }
