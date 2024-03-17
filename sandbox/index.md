@@ -8,10 +8,12 @@ eleventyNavigation:
 
 ## What's an art project without a sandbox?
 
-[Noise Patch](./noise-patch/index.html) Testing noise to create a patch texture
+* [Noise Patch](./noise-patch/index.html) Testing noise to create a patch texture
 
 <iframe src="./noise-patch/index.html" height="810px"  frameborder="0"></iframe>
 
-[Seashore](./seashore/index.html) Testing curveVertex to create a random seashore
+* [Seashore](./seashore/index.html) Testing curveVertex to create a random seashore
 
 <iframe src="./seashore/index.html" height="810px"  frameborder="0"></iframe>
+
+* [Maze(s)](./mazes/index.html) Random perfect mazes, playing with superposition and curveVertex + noise for lines
