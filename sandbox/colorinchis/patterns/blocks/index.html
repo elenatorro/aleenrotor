@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patterns</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: left;
+      align-items: left;
+      height: 100vh;
+    }
+
+  </style>
+</head>
+
+<body>
+  <script>
+    const block0 = (size, x = 0, y = 0) => {
+      strokeWeight(1)
+      fill(255, 255, 255, 0)
+      stroke(0, 0, 0)
+      noStroke()
+      square(x, y, size)
+    }
+
+    const block1 = (size, x = 0, y = 0) => {
+      strokeWeight(1)
+      fill(255)
+      stroke(0, 0, 0)
+      square(x, y, size)
+      triangle(x, y, x, y + size, x + size, y + size)
+      triangle(x, y, x + size, y, x + size, y + size)
+    }
+
+    const block2 = (size, x = 0, y = 0) => {
+      strokeWeight(1)
+      stroke(0, 0, 0)
+      fill(255)
+      square(x, y, size)
+      triangle(x, y, x, y + size, x + size, y)
+      triangle(x + size, y + size, x, y + size, x + size, y)
+    }
+
+    const block3 = (size, x = 0, y = 0) => {
+      strokeWeight(1)
+      stroke(0, 0, 0)
+      fill(255)
+      square(x, y, size)
+      triangle(x, y, x, y + size, x + size, y + size)
+      triangle(x, y, x, y + size, x + size, y)
+    }
+
+    const blockCircleTop = (size, x = 0, y = 0, r = 0) => {
+      strokeWeight(1)
+      fill(255)
+      stroke(0, 0, 0)
+      square(x, y, size)
+      r = r != 0 ? r : size
+      arc((size / 2 + x), (size / 2 + y), r, r, PI, -HALF_PI);
+      arc((size / 2 + x), (size / 2 + y), r, r, -HALF_PI, PI * 2);
+    }
+
+    const blockCircleBottom = (size, x = 0, y = 0, r = 0) => {
+      strokeWeight(1)
+      fill(255)
+      stroke(0, 0, 0)
+      square(x, y, size)
+      r = r != 0 ? r : size
+      arc((size / 2 + x), (size / 2 + y), r, r, 0, PI);
+    }
+
+    const blockCircleLeft = (size, x = 0, y = 0, r = 0) => {
+      strokeWeight(1)
+      fill(255)
+      stroke(0, 0, 0)
+      square(x, y, size)
+      r = r != 0 ? r : size
+      arc((size / 2 + x), (size / 2 + y), r, r, HALF_PI, -HALF_PI);
+    }
+
+    const blockCircleRight = (size, x = 0, y = 0, r = 0) => {
+      strokeWeight(1)
+      fill(255)
+      stroke(0, 0, 0)
+      square(x, y, size)
+      r = r != 0 ? r : size
+      arc((size / 2 + x), (size / 2 + y), r, r, -HALF_PI, HALF_PI);
+    }
+
+    const blockDot = (size, x = 0, y = 0) => {
+      strokeWeight(1)
+      fill(255)
+      stroke(0, 0, 0)
+      square(x, y, size)
+      ellipse(x + size / 2, y + size / 2, size / 2)
+    }
+
+    const blockRecursion = (size, x = 0, y = 0, levels = 3) => {
+      strokeWeight(1)
+      fill(255)
+      stroke(0, 0, 0)
+      square(x, y, size)
+
+      for (let i = 1; i < levels; i++) {
+        ellipse(x + size / 2, y + size / 2, size / i)
+      }
+    }
+
+    const blockDotsS = (size, x = 0, y = 0) => {
+      const n = 4
+      const r = size / n
+      strokeWeight(1)
+      fill(255)
+      stroke(0, 0, 0)
+      square(x, y, size)
+
+      for (let i = 0; i < 2; i++) {
+        for (let j = 0; j < 2; j++) {
+          ellipse(x + (r * i * 2) + r, y + (r * j * 2) + r, r)
+        }
+      }
+    }
+
+    const blockDotsM = (size, x = 0, y = 0) => {
+      const n = 4
+      const r = size / n
+      strokeWeight(1)
+      fill(255)
+      stroke(0, 0, 0)
+      square(x, y, size)
+
+      for (let i = 0; i < 2; i++) {
+        for (let j = 0; j < 2; j++) {
+          ellipse(x + (r * i * 2) + r, y + (r * j * 2) + r, r * 1.5)
+        }
+      }
+    }
+
+    const blockDotsL = (size, x = 0, y = 0) => {
+      const n = 4
+      const r = size / n
+      strokeWeight(1)
+      fill(255)
+      stroke(0, 0, 0)
+      square(x, y, size)
+
+      for (let i = 0; i < 2; i++) {
+        for (let j = 0; j < 2; j++) {
+          ellipse(x + (r * i * 2) + r, y + (r * j * 2) + r, r * 2)
+        }
+      }
+    }
+
+    const blockStar = (size, x = 0, y = 0, r = 0) => {
+      strokeWeight(1)
+      fill(255)
+      stroke(0, 0, 0)
+      square(x, y, size)
+
+      r = r != 0 ? r : size
+
+      arc(x, y, r, r, 0, HALF_PI)
+      arc(x, y + size, r, r, -HALF_PI, 0)
+      arc(x + size, y, r, r, HALF_PI, PI)
+      arc(x + size, y + size, r, r, PI, -HALF_PI)
+    }
+
+    const blockSquares = (size, x = 0, y = 0, squares = 3) => {
+      strokeWeight(1)
+      fill(255)
+      stroke(0, 0, 0)
+      square(x, y, size)
+
+      for (let i = 0; i < squares; i++) {
+        for (let j = 0; j < squares; j++) {
+          square(
+            x + i * (size / squares),
+            y + j * (size / squares),
+            size / squares
+          )
+        }
+      }
+    }
+
+    const blockLinesVertical = (size, x = 0, y = 0, lines = 3) => {
+      strokeWeight(1)
+      fill(255)
+      stroke(0, 0, 0)
+      square(x, y, size)
+
+      for (let i = 0; i < lines; i++) {
+        rect(
+          x + i * (size / lines),
+          y,
+          size / lines,
+          size
+        )
+      }
+    }
+
+    const blockLinesHorizontal = (size, x = 0, y = 0, lines = 3) => {
+      strokeWeight(1)
+      fill(255)
+      stroke(0, 0, 0)
+      square(x, y, size)
+
+      for (let i = 0; i < lines; i++) {
+        rect(
+          x,
+          y + i * (size / lines),
+          size,
+          size / lines
+        )
+      }
+    }
+
+    function setup() {
+      const blockShapes = [
+        block1,
+        block2,
+        block3,
+        blockLinesHorizontal,
+        blockLinesVertical,
+        blockSquares,
+        // blockCircleTop,
+        // blockCircleBottom,
+        // blockCircleLeft,
+        // blockCircleRight,
+        blockDot,
+        blockRecursion,
+        blockDotsS,
+        blockDotsM,
+        blockDotsL,
+        blockStar
+      ]
+
+      // const N = 12
+      // const M = 12
+
+      // for (let i = 0; i < N; i++) {
+      //   for (let j = 0; j < M; j++) {
+      //     const r = int(random(blockShapes.length))
+      //     const shape = blockShapes[int(random(1, blockShapes.length))]
+      //     shape(size, i * size, j * size)
+      //   }
+      // }
+
+      const blockRand = () => {
+        return blockShapes[int(random(blockShapes.length))]
+      }
+
+      const building = [
+        [blockRand(), block0, block0, block0, block0, blockRecursion, block0, block0, block3],
+        [blockRand(), block0, block0, block0, block0, blockRand(), block0, block0, blockRand()],
+        [blockRand(), block0, block0, blockRand(), blockRand(), blockRand(), blockRand(), blockRand(), blockRand()],
+        [blockRand(), block1, blockRand(), blockRand(), blockRand(), blockRand(), blockRand(), blockRand(), blockRand()],
+        [blockRand(), block2, blockRand(), blockRand(), blockRand(), blockRand(), blockRand(), blockRand(), blockRand()],
+        [blockRand(), block1, blockSquares, blockRand(), blockRand(), blockRand(), blockRand(), blockCircleLeft, blockCircleRight],
+        [blockRand(), block2, blockSquares, blockRand(), blockRand(), blockRand(), blockRand(), blockRand(), blockRand()],
+        [blockRand(), block1, blockSquares, blockRand(), blockCircleTop, blockRand(), blockLinesHorizontal, blockLinesHorizontal, blockLinesHorizontal],
+        [blockCircleTop, blockCircleTop, blockCircleTop, blockCircleTop, block0, blockCircleTop, blockCircleTop, blockCircleTop, blockCircleTop]
+      ]
+
+      const CM_TO_INCH = 2.54
+      const WIDTH_CM = 15
+      const HEIGHT_CM = 15
+      const WIDTH_INCHES = WIDTH_CM / CM_TO_INCH
+      const HEIGHT_INCHES = HEIGHT_CM / CM_TO_INCH
+      const DPI = 300
+
+      const WIDTH = Math.round(WIDTH_INCHES * DPI)
+      const HEIGHT = Math.round(HEIGHT_INCHES * DPI)
+
+      createCanvas(WIDTH, HEIGHT)
+
+      const size = WIDTH / building.length
+
+      for (let i = 0; i < building.length; i++) {
+        for (let j = 0; j < building.length; j++) {
+          const shape = building[j][i]
+          shape(size, i * size, j * size)
+        }
+      }
+    }
+
+
+  </script>
+</body>
+
+</html>

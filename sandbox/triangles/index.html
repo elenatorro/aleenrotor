@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noise patch - vertical</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: left;
+      align-items: left;
+      height: 100vh;
+    }
+
+  </style>
+</head>
+
+<body>
+  <script>
+    const sizeX = 400
+    const sizeY = 400
+
+    function setup() {
+      createCanvas(sizeX, sizeY);
+    }
+
+    function draw() {
+      background(220)
+      strokeWeight(0)
+      fill('#92dce5')
+      triangle(0, 0, 0, sizeY / 2, sizeX / 2, sizeY / 2)
+      fill('#f5ff6d')
+      triangle(0, 0, sizeX / 2, 0, sizeX / 2, sizeY / 2)
+      fill('#ff66d8')
+      triangle(sizeX / 2, 0, sizeX, 0, sizeX / 2, sizeY / 2)
+      fill('#25cd7c')
+      triangle(sizeX / 2, sizeY / 2, sizeX, 0, sizeX, sizeY / 2)
+      fill('#ffffff')
+      triangle(0, sizeY / 2, sizeX / 2, sizeY / 2, 0, sizeY)
+      fill('#9899e6')
+      triangle(0, sizeY, sizeX / 2, sizeY / 2, sizeX / 2, sizeY)
+      fill('#000000')
+      triangle(sizeX / 2, sizeY / 2, sizeX / 2, sizeY, sizeX, sizeY)
+      fill('#cfccce')
+      triangle(sizeX / 2, sizeY / 2, sizeX, sizeY, sizeX, sizeY / 2)
+    }
+
+  </script>
+</body>
+
+</html>

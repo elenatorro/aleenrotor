@@ -21,7 +21,7 @@
 <body>
   <script>
     let cols, rows;
-    const w = 150; // Width and height of each cell
+    const w = 100; // Width and height of each cell
     const strokeW = 5
     const noiseLevel = 1
     const mazeWidth = 800
@@ -237,9 +237,10 @@
       let margin = 100
       createCanvas(mazeWidth + margin * 3, mazeHeight + margin * 3)
       background(255)
-      for (let x = 0; x < 5; x++) {
-        drawMaze(margin + x * 50)
-      }
+      drawMaze(margin)
+      // for (let x = 0; x < 5; x++) {
+      //   drawMaze(margin + x * 50)
+      // }
     }
 
   </script>
