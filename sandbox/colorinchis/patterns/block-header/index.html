@@ -21,10 +21,13 @@
 
 <body>
   <script>
-    //const colors = ['#001219','#005f73','#0a9396','#94d2bd','#e9d8a6','#ee9b00','#ca6702','#bb3e03','#ae2012','#9b2226']
+    const colors = ['#001219','#005f73','#0a9396','#94d2bd','#e9d8a6','#ee9b00','#ca6702','#bb3e03','#ae2012','#9b2226']
     //const colors = ['#231942', '#5e548e', '#9f86c0', '#be95c4', '#e0b1cb']
     //const colors = ['#1a6646', '#99cca2', '#7badcc', '#344373', '#6f4b73', '#cc8070', '#c45631', '#9e1c18']
-    const colors = ['#141414', '#f8f4f9', '#98ce00', '#9d8af9', '#6e48c3']
+    //const colors = ['#141414', '#f8f4f9', '#98ce00', '#9d8af9', '#6e48c3']
+    //const colors = ['#264653', '#2a9d8f', '#e9c46a', '#f4a261', '#e76f51']
+    //const colors = ['#669900', '#99cc33', '#ccee66', '#006699', '#3399cc', '#990066', '#cc3399', '#ff6600', '#ff9900', '#ffcc00']
+    //const colors = ['#edae49', '#d1495b', '#00798c', '#30638e', '#003d5b']
     const USE_COLORS = true
     const STROKE_WEIGHT = 1
 
@@ -433,15 +436,15 @@
         blockLinesHorizontal,
         blockLinesVertical,
         blockSquares,
-        blockCircleTop,
-        blockCircleBottom,
-        blockCircleLeft,
-        blockCircleRight,
+        // blockCircleTop,
+        // blockCircleBottom,
+        // blockCircleLeft,
+        // blockCircleRight,
         blockDot,
         blockRecursion,
         blockDotsS,
-        blockDotsM,
-        blockDotsL,
+        // blockDotsM,
+        // blockDotsL,
         blockStar
       ]
 
@@ -462,8 +465,8 @@
       ]
 
       const CM_TO_INCH = 2.54
-      const WIDTH_CM = 15
-      const HEIGHT_CM = 15
+      const WIDTH_CM = 36
+      const HEIGHT_CM = 12
       const WIDTH_INCHES = WIDTH_CM / CM_TO_INCH
       const HEIGHT_INCHES = HEIGHT_CM / CM_TO_INCH
       const DPI = 300
@@ -485,15 +488,24 @@
       //   }
       // }
 
-      const N = 12
-      const M = 12
+      const N = 4
+      const M = 8
       const size = WIDTH / N
+
+    //   for (let i = 0; i < N; i++) {
+    //     for (let j = 0; j < M; j++) {
+    //       const r = int(random(blockShapes.length))
+    //       const shape = blockShapes[int(random(1, blockShapes.length))]
+    //       shape(size, i * size, j * size)
+    //     }
+    //   }
 
       for (let i = 0; i < N; i++) {
         for (let j = 0; j < M; j++) {
-          const r = int(random(blockShapes.length))
-          const shape = blockShapes[int(random(1, blockShapes.length))]
-          shape(size, i * size, j * size)
+          //blockStar(size, i * size, j * size)
+      const r = int(random(blockShapes.length))
+      const shape = blockShapes[int(random(1, blockShapes.length))]
+      shape(size, i * size, j * size)
         }
       }
     }
