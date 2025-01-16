@@ -21,8 +21,8 @@ function setup() {
     noFill()
     strokeWeight(30)
 
-    //PI = 4
-    //HALF_PI = PI / 2
+    PI = 4
+    HALF_PI = PI / 2
     const COLORS = ["#3d5a80","#98c1d9","#e0fbfc","#ee6c4d","#293241"]
     background(COLORS[4])
 

@@ -21,3 +21,6 @@ title: Genuary 2025
 - [Day 14](/sandbox/genuary2025/day_14)
 - [Day 15](/sandbox/genuary2025/day_15)
 - [Day 16](/sandbox/genuary2025/day_16)
+- [Day 17](/sandbox/genuary2025/day_17)
+- [Day 18](/sandbox/genuary2025/day_18)
+- [Day 19](/sandbox/genuary2025/day_19)
