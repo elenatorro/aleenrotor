@@ -66,7 +66,7 @@ const materialOptions = {
     flatShading: false,
     combine: THREE.MixOperation, // Default combine operation
     reflectivity: 1,
-    transparent: true, // Material is not transparent
+    transparent: false, // Material is not transparent
     opacity: 1 // Fully opaque
 };
 
@@ -128,7 +128,7 @@ function animate() {
     // required if controls.enableDamping or controls.autoRotate are set to true
     //camera.position.y += 0.1;
     //sphereGroup.rotation.x += 0.005;
-    sphereGroup.rotation.y += 0.005;
+    // sphereGroup.rotation.y += 0.005;
     //sphereGroup.rotation.z += 0.001;
     controls.update();
     renderer.render( scene, camera );

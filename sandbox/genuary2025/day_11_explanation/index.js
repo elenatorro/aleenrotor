@@ -46,9 +46,6 @@ renderer.setSize(window.innerWidth, window.innerHeight)
 document.body.appendChild(renderer.domElement)
 
 const controls = new OrbitControls(camera, renderer.domElement)
-const INNER_BUILDING_COLOR = 0x540b0e
-const BUILDING_COLOR = 0x9e2a2b
-const WINDOW_COLOR = 0xe09f3e
 
 const removeWindow = (buildingCSG, windowsCSG) => {
   if (!windowsCSG.length) {
@@ -59,19 +56,6 @@ const removeWindow = (buildingCSG, windowsCSG) => {
   return removeWindow(newBuildingCSG, windowsCSG)
 }
 
-const sphere = new THREE.Mesh(
-  new THREE.SphereGeometry(1, 60, 60),
-  new THREE.MeshStandardMaterial({
-    color: 0xff0000
-  })
-)
-sphere.position.set(0, 0, 0)
-sphere.updateMatrixWorld()
-// scene.add(sphere)
-
-// const COLORS_C = [0x457b9d, 0xa8dadc, 0x1d3557]
-// const COLORS_B = [0x2c6e49, 0x4c956c, 0xffc9b9]
-// const COLORS_A = [0x9e2a2b, 0x540b0e, 0xe09f3e]
 const COLORS_A = [0x161925, 0x23395b, 0x8ea8c3]
 const COLORS_B = [0x735d78, 0xb392ac, 0xd1b3c4]
 const COLORS_C = [0x735751, 0xa78a7f, 0xe7d7c1]
@@ -100,6 +84,7 @@ const addBuilding = (buildingX = 10, buildingY = 12, buildingZ = 8, sideARows = 
   )
   buildingMesh.position.set(X, Y, Z)
   buildingMesh.updateMatrixWorld()
+  // explain
   //buildingGroup.add(buildingMesh)
   const buildingCSG = CSG.fromMesh(buildingMesh, 0)
 
@@ -113,13 +98,13 @@ const addBuilding = (buildingX = 10, buildingY = 12, buildingZ = 8, sideARows = 
       color: colors[1],
       transparent: true,
       wireframe: false,
-      opacity: 0.9
+      opacity: 0.5
     })
   )
   buildingInnerMesh.position.set(X, Y, Z)
   buildingInnerMesh.updateMatrixWorld()
   const buildingInnerCSG = CSG.fromMesh(buildingInnerMesh, 0)
-  //buildingGroup.add(buildingInnerMesh)
+  buildingGroup.add(buildingInnerMesh)
 
   // SIDE A WINDOWS
   const WINDOW_ROWS = sideARows
@@ -143,7 +128,8 @@ const addBuilding = (buildingX = 10, buildingY = 12, buildingZ = 8, sideARows = 
       windowsMesh.position.set(WINDOW_WIDTH + WINDOW_WIDTH / 2 + (2 * WINDOW_WIDTH * i), WINDOW_HEIGHT +
         WINDOW_HEIGHT / 2 + (2 * WINDOW_HEIGHT * j), BUILDING_Z / 2)
       windowsMesh.updateMatrixWorld()
-      //buildingGroup.add(windowsMesh)
+      // explain
+      // buildingGroup.add(windowsMesh)
       materials.push(windowsMesh.material)
       const windowsCSG = CSG.fromMesh(windowsMesh, i + j + 1)
       windowsCSGs.push(windowsCSG)
@@ -171,13 +157,15 @@ const addBuilding = (buildingX = 10, buildingY = 12, buildingZ = 8, sideARows = 
       windowsMesh.position.set(BUILDING_X / 2, WINDOW_B_HEIGHT + WINDOW_B_HEIGHT / 2 + (2 * WINDOW_B_HEIGHT * i),
         WINDOW_B_WIDTH + WINDOW_B_WIDTH / 2 + (2 * WINDOW_B_WIDTH * j))
       windowsMesh.updateMatrixWorld()
-      //buildingGroup.add(windowsMesh)
+      //explain
+      // buildingGroup.add(windowsMesh)
       materials.push(windowsMesh.material)
       const windowsCSG = CSG.fromMesh(windowsMesh, i + j + 1)
       windowsCSGs.push(windowsCSG)
     }
   }
 
+  // explain
   const buildingIntersectCSG = removeWindow(buildingCSG, windowsCSGs)
   const buildingIntersectMesh = CSG.toMesh(buildingIntersectCSG, new THREE.Matrix4(), materials)
   buildingGroup.add(buildingIntersectMesh)
@@ -191,9 +179,6 @@ const BUILDING_BASE_X = 20
 const BUILDING_BASE_Z = 24
 const BUILDING_BASE_Y = 12
 
-// camera.position.x = BUILDINGS_X * BUILDINGS_X * 10
-// camera.position.y = BUILDINGS_Y * BUILDING_BASE_Y * 100
-// camera.position.z = BUILDING_BASE_Y * BUILDING_BASE_Z * 20
 camera.position.set(150, 200, 150)
 camera.zoom = 2
 camera.updateProjectionMatrix()
@@ -226,59 +211,7 @@ floor.position.set(BUILDING_BASE_X * 6, 0, BUILDING_BASE_Z * 6)
 floor.updateMatrixWorld()
 scene.add(floor)
 
-// Rain properties
-const rainCount = 0;
-const rainSpeed = 1;
-const rainHeight = 200;
-
-// Create rain geometry
-const rainGeometry = new THREE.BufferGeometry();
-const rainPositions = new Float32Array(rainCount * 6); // x1, y1, z1, x2, y2, z2 for each line
-
-// Initialize raindrop lines
-for (let i = 0; i < rainCount; i++) {
-  const x = (Math.random() - 0.5) * 900; // Spread in x-axis
-  const y1 = Math.random() * rainHeight; // Start height
-  const y2 = y1 - 1; // End point slightly below start
-  const z = (Math.random() - 0.5) * 900; // Spread in z-axis
-  rainPositions.set([x, y1, z, x, y2, z], i * 6);
-}
-
-rainGeometry.setAttribute('position', new THREE.BufferAttribute(rainPositions, 3));
-
-// Create rain material
-const rainMaterial = new THREE.LineBasicMaterial({
-  color: 0xa3cef1,
-  transparent: true,
-  opacity: 0.7,
-});
-
-// Create rain lines
-const rain = new THREE.LineSegments(rainGeometry, rainMaterial);
-scene.add(rain);
-
 window.addEventListener('resize', onWindowResize, false)
-
-function updateRain() {
-  const positions = rain.geometry.attributes.position.array;
-  for (let i = 0; i < rainCount; i++) {
-    // Move both start and end points of the line downward
-    positions[i * 6 + 1] -= rainSpeed; // y1
-    positions[i * 6 + 4] -= rainSpeed; // y2
-
-    // Reset when below threshold
-    if (positions[i * 6 + 1] < -rainHeight / 2) {
-      const x = (Math.random() - 0.5) * 900; // Randomize x position again
-      const z = (Math.random() - 0.5) * 900; // Randomize z position again
-      const y1 = rainHeight / 2;
-      const y2 = y1 - 1;
-
-      positions.set([x, y1, z, x, y2, z], i * 6);
-    }
-  }
-
-  rain.geometry.attributes.position.needsUpdate = true; // Notify Three.js of changes
-}
 
 function onWindowResize() {
   camera.aspect = window.innerWidth / window.innerHeight
@@ -289,10 +222,7 @@ function onWindowResize() {
 
 function animate() {
   requestAnimationFrame(animate)
-
-  updateRain()
   controls.update()
-
   render()
 }
 

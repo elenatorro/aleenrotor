@@ -971,26 +971,14 @@ function setup() {
   const M = 8
   const size = ((WIDTH - MARGIN) / N)
 
-  for (let i = 0; i < N; i++) {
-    for (let j = 0; j < M; j++) {
-      if ((i % 2 != 0 && j % 2 == 0) || (i % 2 == 0 && j % 2 != 0)) {
-        //blockLinesVertical(size, i * size + MARGIN, j * size + MARGIN)
-        blockCircleLeft(size, i * size + MARGIN, j * size + MARGIN)
-      } else {
-        blockCircleRight(size, i * size + MARGIN, j * size + MARGIN)
-      }
-      //square(i * size + MARGIN, j * size + MARGIN, size)
-    }
-  }
-
   for (let i = 0; i < N * 2; i++) {
     for (let j = 0; j < M * 2; j++) {
       if (((i % 2 != 0 && j % 2 == 0) || (i % 2 == 0 && j % 2 != 0))) {
         const s = size
-        //flower1(s, i * s + MARGIN, j * s + MARGIN)
+        flower3(s, i * s + MARGIN, j * s + MARGIN)
       } else {
-        const s = size * 0.5
-        flower1(s, i * s + MARGIN, j * s + MARGIN)
+        const s = size
+        //flower1(s, i * s + MARGIN, j * s + MARGIN)
       }
     }
   }

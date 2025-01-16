@@ -327,7 +327,7 @@ const buildingTop = (size, x = 0, y = 0, colors, m) => {
   push()
   const reversed = colors.slice().reverse()
   stroke(reversed[c])
-  strokeWeight(4)
+  strokeWeight(10)
   if (y == 0) {
     fill(reversed[c])
   } else if (y >= colors.length - 10) {

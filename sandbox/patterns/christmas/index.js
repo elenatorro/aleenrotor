@@ -1265,32 +1265,32 @@ function setup() {
     }
   }
 
-  //   for (let i = 0; i < N * 2; i++) {
-  //     for (let j = 0; j < M * 2; j++) {
-  //         if (((i % 2 != 0 && j % 2 == 0) || (i % 2 == 0 && j % 2 != 0))) {
-  //             classicStar(size, i * size + MARGIN, j * size + MARGIN, size / 6, size / 3)
-  //         } else {
-  //             push()
-  //             translate(i * size + MARGIN, j * size + MARGIN)
-  //             //fill(colors[0])
-  //             stroke(0)
-  //             strokeWeight(2)
-  //             //square(0, 0, size)
-  //             noFill()
-  //             candy1(size, 0 + size / 6, 0, 0, colors[1], colors[3], colors[0])
-  //             pop()
-  //         }
-  //     }
-  //   }
+    for (let i = 0; i < N * 2; i++) {
+      for (let j = 0; j < M * 2; j++) {
+          if (((i % 2 != 0 && j % 2 == 0) || (i % 2 == 0 && j % 2 != 0))) {
+              classicStar(size, i * size + MARGIN, j * size + MARGIN, size / 6, size / 3)
+          } else {
+              push()
+              translate(i * size + MARGIN, j * size + MARGIN)
+              //fill(colors[0])
+              stroke(0)
+              strokeWeight(2)
+              //square(0, 0, size)
+              noFill()
+              candy1(size, 0 + size / 6, 0, 0, colors[1], colors[3], colors[0])
+              pop()
+          }
+      }
+    }
 
   for (let i = 0; i < N * 2; i++) {
     for (let j = 0; j < M * 2; j++) {
       if (((i % 2 != 0 && j % 2 == 0) || (i % 2 == 0 && j % 2 != 0))) {
         //classicStar(size, i * size + MARGIN, j * size + MARGIN, size / 4, size / 2)
         //classicStar(size, i * size + MARGIN, j * size + MARGIN, size / 8, size / 4)
-        snowflake1(size, i * size + MARGIN, j * size + MARGIN)
+        //snowflake1(size, i * size + MARGIN, j * size + MARGIN)
       } else {
-        snowflake1(size, i * size + MARGIN, j * size + MARGIN)
+        //snowflake1(size, i * size + MARGIN, j * size + MARGIN)
         //classicStar(size, i * size + MARGIN, j * size + MARGIN, size / 8, size / 2, 4)
       }
     }
