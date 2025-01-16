@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "eleventy-plugin-wordcount": "^1.0.5",
-    "node-fetch": "^2.6.7"
+    "node-fetch": "^2.6.7",
+    "three": "^0.172.0"
   }
 }

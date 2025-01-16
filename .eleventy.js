@@ -72,9 +72,10 @@ module.exports = function(eleventyConfig) {
     return filterTagList([...tagSet]);
   });
 
-  // Copy the `img` and `css` folders to the output
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("css");
+  eleventyConfig.addPassthroughCopy("scripts");
+  eleventyConfig.addPassthroughCopy("sandbox/**/*.js")
 
   // Customize Markdown library and settings:
   let markdownLibrary = markdownIt({
@@ -117,7 +118,7 @@ module.exports = function(eleventyConfig) {
       "md",
       "njk",
       "html",
-      "liquid"
+      "liquid",
     ],
 
     // -----------------------------------------------------------------
