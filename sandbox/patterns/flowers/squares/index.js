@@ -975,7 +975,7 @@ function setup() {
     for (let j = 0; j < M * 2; j++) {
       if (((i % 2 != 0 && j % 2 == 0) || (i % 2 == 0 && j % 2 != 0))) {
         const s = size
-        flower3(s, i * s + MARGIN, j * s + MARGIN)
+        flower7(s, i * s + MARGIN, j * s + MARGIN)
       } else {
         const s = size
         //flower1(s, i * s + MARGIN, j * s + MARGIN)
