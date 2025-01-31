@@ -131,7 +131,7 @@ function createBuildings(scene, count) {
 //     scene.add(sphereGroup);
 // }
 
-createBuildings(scene, 10);
+createBuildings(scene, 20);
 
 const dl2 = new THREE.DirectionalLight(0xa2d2ff, 10, 10);
 dl2.position.set(-1, 10, -1);
@@ -142,7 +142,6 @@ dl3.position.set(-1, 1, 10);
 scene.add(dl3);
 
 renderer.render(scene, camera);
-console.log(renderer.domElement.toDataURL())
 
 // Handle window resizing
 // Add OrbitControls

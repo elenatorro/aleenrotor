@@ -129,7 +129,7 @@ const addBuilding = (buildingX = 10, buildingY = 12, buildingZ = 8, sideARows = 
         WINDOW_HEIGHT / 2 + (2 * WINDOW_HEIGHT * j), BUILDING_Z / 2)
       windowsMesh.updateMatrixWorld()
       // explain
-      // buildingGroup.add(windowsMesh)
+      buildingGroup.add(windowsMesh)
       materials.push(windowsMesh.material)
       const windowsCSG = CSG.fromMesh(windowsMesh, i + j + 1)
       windowsCSGs.push(windowsCSG)
@@ -158,7 +158,7 @@ const addBuilding = (buildingX = 10, buildingY = 12, buildingZ = 8, sideARows = 
         WINDOW_B_WIDTH + WINDOW_B_WIDTH / 2 + (2 * WINDOW_B_WIDTH * j))
       windowsMesh.updateMatrixWorld()
       //explain
-      // buildingGroup.add(windowsMesh)
+      buildingGroup.add(windowsMesh)
       materials.push(windowsMesh.material)
       const windowsCSG = CSG.fromMesh(windowsMesh, i + j + 1)
       windowsCSGs.push(windowsCSG)

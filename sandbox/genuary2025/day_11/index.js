@@ -217,9 +217,9 @@ floor.updateMatrixWorld()
 scene.add(floor)
 
 // Rain properties
-const rainCount = 0
-const rainSpeed = 1
-const rainHeight = 200
+const rainCount = 10000
+const rainSpeed = 2
+const rainHeight = 250
 
 // Create rain geometry
 const rainGeometry = new THREE.BufferGeometry()

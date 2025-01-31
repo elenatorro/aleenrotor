@@ -33,11 +33,11 @@ function setup() {
       x3 = x + s,
       y3 = y - h / 2
     const c1 = color(COLORS[1])
-    c1.setAlpha(50)
+    c1.setAlpha(100)
     fill(c1)
     triangle(x1, y1 - delay, x2, y2 - delay, x3, y3 - delay)
     const c2 = color(COLORS[3])
-    c2.setAlpha(50)
+    //c2.setAlpha(100)
     fill(c2)
     const a1 = x - s,
       b1 = y - h / 2,

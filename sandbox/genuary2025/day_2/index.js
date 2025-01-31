@@ -327,7 +327,7 @@ const buildingTop = (size, x = 0, y = 0, colors, m) => {
   push()
   const reversed = colors.slice().reverse()
   stroke(reversed[c])
-  strokeWeight(10)
+  strokeWeight(4)
   if (y == 0) {
     fill(reversed[c])
   } else if (y >= colors.length - 10) {
@@ -350,8 +350,8 @@ const buildingTop = (size, x = 0, y = 0, colors, m) => {
 }
 
 const CM_TO_INCH = 2.54
-const WIDTH_CM = 20
-const HEIGHT_CM = 30
+const WIDTH_CM = 10
+const HEIGHT_CM = 10
 const WIDTH_INCHES = WIDTH_CM / CM_TO_INCH
 const HEIGHT_INCHES = HEIGHT_CM / CM_TO_INCH
 const DPI = 300
@@ -361,7 +361,7 @@ const HEIGHT = Math.round(HEIGHT_INCHES * DPI)
 const size = WIDTH / 5
 const COLOR_STEPS = HEIGHT - size * 2
 //const colors = ColorSteps.getColorSteps('#243642', '#E2F1E7', COLOR_STEPS)
-// const colors = ColorSteps.getColorSteps('#e27396', '#004e89', COLOR_STEPS)
+//const colors = ColorSteps.getColorSteps('#e27396', '#004e89', COLOR_STEPS)
 // const colors = ColorSteps.getColorSteps('#ff7b00', '#73d2de', COLOR_STEPS)
 const colors = ColorSteps.getColorSteps('#f9dbbd', '#0d1b2a', COLOR_STEPS)
 

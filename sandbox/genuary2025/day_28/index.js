@@ -1,5 +1,5 @@
 const CM_TO_INCH = 2.54
-const WIDTH_CM = 40
+const WIDTH_CM = 25
 const HEIGHT_CM = 25
 const MARGIN_CM = 0.1
 const WIDTH_INCHES = WIDTH_CM / CM_TO_INCH
@@ -12,8 +12,8 @@ const WIDTH = Math.round(WIDTH_INCHES * DPI)
 const HEIGHT = Math.round(HEIGHT_INCHES * DPI)
 const MARGIN = Math.round(MARGIN_INCHES * DPI)
 const SCROLL_MARGIN = Math.round(SCROLL_MARGIN_CM * DPI)
-const N = 16
-const M = 10
+const N = 5
+const M = 5
 const size = (WIDTH - MARGIN) / N
 //const COLORS = ["#cad2c5","#84a98c","#52796f","#354f52","#2f3e46"]
 const COLORS = ["#9fffcb","#25a18e","#7ae582"]
@@ -27,7 +27,7 @@ function drawStaticScene() {
 
 const flower7 = (x, y, size) => {
   noStroke()
-  stroke("#004e64")
+  stroke(255)
   strokeWeight(10)
 
   const petal_radius = size / 1.5

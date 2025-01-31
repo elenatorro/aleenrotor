@@ -1,6 +1,6 @@
 const CM_TO_INCH = 2.54
 const WIDTH_CM = 10
-const HEIGHT_CM = 15
+const HEIGHT_CM = 10
 const MARGIN_CM = 0.1
 const WIDTH_INCHES = WIDTH_CM / CM_TO_INCH
 const HEIGHT_INCHES = HEIGHT_CM / CM_TO_INCH
@@ -11,9 +11,9 @@ const WIDTH = Math.round(WIDTH_INCHES * DPI)
 const HEIGHT = Math.round(HEIGHT_INCHES * DPI)
 const MARGIN = Math.round(MARGIN_INCHES * DPI)
 
-const NUMDROPS = 100
-const BLOCKS = 100
-const GRADIENT = 100
+const NUMDROPS = 10
+const BLOCKS = 0
+const GRADIENT = 150
 
 const colors = ColorSteps.getColorSteps('#001233', '#edede9', GRADIENT)
 const colorBlocks = ColorSteps.getColorSteps('#e0e1dd', '#415a77', 100)

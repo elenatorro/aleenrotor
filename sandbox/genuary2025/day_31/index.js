@@ -7,9 +7,9 @@ const HEIGHT_INCHES = HEIGHT_CM / CM_TO_INCH
 const MARGIN_INCHES = MARGIN_CM / CM_TO_INCH
 const DPI = 300
 
-const COLORS = ["#f94144","#f3722c","#f8961e","#f9844a","#f9c74f","#90be6d","#43aa8b","#4d908e","#577590","#277da1"]
+//const COLORS = ["#f94144","#f3722c","#f8961e","#f9844a","#f9c74f","#90be6d","#43aa8b","#4d908e","#577590","#277da1"]
 // const COLORS = ["#10002b","#240046","#3c096c","#5a189a","#7b2cbf","#9d4edd","#c77dff","#e0aaff"].reverse()
-//const COLORS = ["#7400b8", "#6930c3", "#5e60ce", "#5390d9", "#4ea8de", "#48bfe3", "#56cfe1", "#64dfdf", "#72efdd", "#80ffdb"]
+const COLORS = ["#7400b8", "#6930c3", "#5e60ce", "#5390d9", "#4ea8de", "#48bfe3", "#56cfe1", "#64dfdf", "#72efdd", "#80ffdb"]
 const WIDTH = Math.round(WIDTH_INCHES * DPI)
 const HEIGHT = Math.round(HEIGHT_INCHES * DPI)
 const MARGIN = Math.round(MARGIN_INCHES * DPI)
@@ -74,9 +74,9 @@ function drawPixelArray(arr, i, j, size, d = 'r') {
 
 function setup() {
   createCanvas(WIDTH + MARGIN, HEIGHT + MARGIN)
-  //background("#ee6c4d")
-  background("#f5dfbb")
-  const arr = [7, 2, 1, 8, 3, 5, 4, 6]
+  background("#94d2bd")
+  //background("#f5dfbb")
+  const arr = [7, 2, 8, 1, 3, 6, 4, 5]
   const size = 10 * arr.length
   mergeSort(arr, WIDTH / 2 - (arr.length * size), MARGIN * 3.5, size, 'r')
 }

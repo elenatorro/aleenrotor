@@ -13,7 +13,7 @@ const COLORS = ["#006ba6", "#0496ff", "#ffbc42", "#d81159", "#8f2d56"]
 const BACKGROUND_COLOR = "#f4f1de"
 const SMOOTH_LEVEL = 10
 
-const tree = (originalDepth = 5, depth = 5, distance = 10, x = 0, y = 0, angle = 0, deg = 30) => {
+const tree = (originalDepth = 3, depth = 3, distance = 10, x = 0, y = 0, angle = 0, deg = 10) => {
   const start = [x, y]
   const end = [x + distance * sin(angle), y - distance * cos(angle)]
   //let color = COLORS[0]
@@ -29,7 +29,8 @@ const tree = (originalDepth = 5, depth = 5, distance = 10, x = 0, y = 0, angle =
   //     stroke(COLORS[0])
   // }
   strokeWeight(1)
-  stroke(COLORS[int(x % (COLORS.length - 1))])
+  stroke(0)
+  //stroke(COLORS[int(x % (COLORS.length - 1))])
 
   line(
     start[0],
@@ -50,7 +51,7 @@ function setup() {
   background(BACKGROUND_COLOR)
   fill(BACKGROUND_COLOR)
   strokeWeight(1)
-  tree(10, 10, HEIGHT / 3.5, WIDTH / 2, HEIGHT, 0, 45)
+  tree(10, 10, HEIGHT / 3.5, WIDTH / 2, HEIGHT, 0, 25)
   //tree(11, 15, 500, WIDTH/2 + WIDTH/5, HEIGHT, 0, 25)
   //tree(16, 15, 800, WIDTH/2 - WIDTH/7, HEIGHT, 0, 45)
 }

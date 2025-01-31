@@ -1,6 +1,6 @@
 const CM_TO_INCH = 2.54
-const WIDTH_CM = 10
-const HEIGHT_CM = 15
+const WIDTH_CM = 5
+const HEIGHT_CM = 5
 const WIDTH_INCHES = WIDTH_CM / CM_TO_INCH
 const HEIGHT_INCHES = HEIGHT_CM / CM_TO_INCH
 const DPI = 300

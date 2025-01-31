@@ -1,5 +1,5 @@
 function setup() {
-  createCanvas(600, 800)
+  createCanvas(600, 600)
   let inc = 0.25
 
   strokeWeight(0.5)
@@ -9,7 +9,7 @@ function setup() {
   ]
 
   background(colors[3])
-  for (let i = -10; i <= height + 10; i += inc) {
+  for (let i = -10; i <= height + 100; i += inc) {
     const init = random(0, width / 2)
     const end = random(width / 2, width)
 
@@ -53,4 +53,8 @@ function setup() {
     }
     endShape()
   }
+  noFill()
+  stroke(colors[2])
+  strokeWeight(10)
+  square(0, 0, 600)
 }

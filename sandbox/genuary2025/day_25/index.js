@@ -1,12 +1,12 @@
 function setup() {
-  const WIDTH = 400
+  const WIDTH = 800
   const HEIGHT = 800
   createCanvas(WIDTH * 2, HEIGHT * 2)
 
   const RADIUS = (WIDTH / 2)
   const LEVELS = 100
   const INNER = 100
-  const POINTS = 8
+  const POINTS = 10
   const COLORS = ["#0d3b66","#faf0ca","#f4d35e","#ee964b","#f95738"]
 
   background("#e5383b")

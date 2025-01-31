@@ -4,7 +4,7 @@ function setup() {
   //const COLORS = ["#cbc0d3","#efd3d7","#feeafa","#dee2ff"]
   //const COLORS = ["#e9ecef","#dee2e6","#ced4da","#adb5bd","#6c757d"]
   const COLORS = ["#dad7cd", "#a3b18a", "#588157", "#3a5a40", "#344e41"]
-  createCanvas(600, 800);
+  createCanvas(800, 800);
 
   let resolution = 0.002;
   let numPoints = 100;

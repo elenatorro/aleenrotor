@@ -1,7 +1,7 @@
 function setup() {
   const CM_TO_INCH = 2.54
   const WIDTH_CM = 10
-  const HEIGHT_CM = 15
+  const HEIGHT_CM = 10
   const MARGIN_CM = 0.1
   const WIDTH_INCHES = WIDTH_CM / CM_TO_INCH
   const HEIGHT_INCHES = HEIGHT_CM / CM_TO_INCH
@@ -15,7 +15,7 @@ function setup() {
   createCanvas(WIDTH + MARGIN, HEIGHT + MARGIN)
 
   const N = 20
-  const M = 40
+  const M = 20
   const SIZE = (WIDTH - MARGIN) / N
 
   class Tile {
@@ -26,9 +26,10 @@ function setup() {
     }
   }
 
-  const backgroundColor = '#d1be9c'
-  //const COLORS = ["#ffbe0b","#fb5607","#ff006e","#8338ec","#3a86ff"]
-  const COLORS = ["2d9486","#172005","#9f4916","#6b754e","#0c7557","#ff0039","#1d3422","#4c261c","#a62a3c","#9c743f"]
+  //const backgroundColor = '#d1be9c'
+  const backgroundColor = '#172005'
+  const COLORS = ["#ffbe0b","#fb5607","#ff006e","#8338ec","#3a86ff"]
+  //const COLORS = ["2d9486","#172005","#9f4916","#6b754e","#0c7557","#ff0039","#1d3422","#4c261c","#a62a3c","#9c743f"]
   const lineColor = COLORS[1]
   const TILES = [...Array(N)].map(e => Array(M).fill(new Tile()))
 
@@ -111,5 +112,5 @@ function setup() {
 
   noFill()
   strokeWeight(1)
-  rect(0, 0, WIDTH + MARGIN, HEIGHT + MARGIN)
+  rect(1, 1, WIDTH + MARGIN - 1, HEIGHT + MARGIN - 1)
 }

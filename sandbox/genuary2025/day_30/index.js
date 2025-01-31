@@ -1,6 +1,6 @@
 const CM_TO_INCH = 2.54
 const WIDTH_CM = 10
-const HEIGHT_CM = 15
+const HEIGHT_CM = 10
 const MARGIN_CM = 0.5
 const WIDTH_INCHES = WIDTH_CM / CM_TO_INCH
 const HEIGHT_INCHES = HEIGHT_CM / CM_TO_INCH
@@ -99,7 +99,7 @@ function createGraph(depth, x1, x2, y1, y2, color, min, max, root) {
   graph.nodes.forEach((node) => {
     node.children.forEach((child) => {
       stroke(color)
-      strokeWeight(random(0, 5)) 
+      strokeWeight(random(1, 8)) 
       line(node.x, node.y, child.x, child.y)
     })
   })
@@ -110,12 +110,12 @@ function createGraph(depth, x1, x2, y1, y2, color, min, max, root) {
 function setup() {
   createCanvas(WIDTH + MARGIN, HEIGHT + MARGIN)
   background("#faedcd")
-  const graph1 = createGraph(2, MARGIN, WIDTH, MARGIN, HEIGHT -MARGIN, COLORS[1], 1, 3)
+  const graph1 = createGraph(3, MARGIN, WIDTH, MARGIN, HEIGHT -MARGIN, COLORS[1], 1, 3)
   const graph2 = createGraph(4, WIDTH/3, WIDTH, MARGIN, HEIGHT / 3, COLORS[2], 1, 8, graph1.getRandomNode())
   const graph3 = createGraph(6, MARGIN, WIDTH/6, MARGIN, HEIGHT/2, COLORS[5], 5, 9, graph2.getRandomNode())
   const graph6 = createGraph(3, WIDTH/2, WIDTH, HEIGHT/2, MARGIN, COLORS[9], 1, 4)
   const graph4 = createGraph(5, WIDTH/3, WIDTH, MARGIN, HEIGHT / 3, COLORS[0], 1, 9, graph2.getRandomNode())
-  const graph5 = createGraph(9, WIDTH/2, WIDTH, HEIGHT/2, HEIGHT, COLORS[4], 2, 5, graph3.getRandomNode())
+  const graph5 = createGraph(8, WIDTH/2, WIDTH, HEIGHT/2, HEIGHT, COLORS[4], 2, 5, graph3.getRandomNode())
   
 
   graph6.drawCircles()

@@ -1,6 +1,7 @@
 
 ## Grid 1
 
+
 ```sql
 SELECT arrayStringConcat(groupArray(concat('\x1b[1;31;4', toString(if(mod(number, 8) in (0, 2, 4, 6, 8), 9, toInt32(randUniform(1,8)))), 'm   ', '\x1b[2;37;0m'))) FROM numbers(10000) format LineAsString
 ```
